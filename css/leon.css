@@ -1,0 +1,480 @@
+/* welcome to css file */
+/* start variables */
+:root{
+    --main-color:#10cab7;
+    --secondary-color:#2d4657;
+    --padding:60px;
+    --main-duration: .3s;
+}
+/* end variables */
+
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+  html, body { 
+      scroll-behavior: smooth
+    }
+body{
+    font-family:"Work Sans" ,sans-serif;
+
+}
+/* for all elements in any container*/
+/*container has a width from @madia */
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.Special-heading{
+    font-size: 100px;
+    text-align: center;
+    font-weight: 800;
+    color: #e7e7e7;
+    letter-spacing: -3px;
+    margin: 0;
+}
+/* يعني البارجراف اللي بعد السبشيال هيدينج مباشرة  */
+.Special-heading + p{
+    text-align: center;
+    font-size: 15px;
+    margin: -30px 0 0;
+    color: #797979;
+}
+/* for mobile  */
+@media (max-width : 767px)
+{
+    .Special-heading{
+        font-size: 60px;
+    }
+    .Special-heading + p{
+        margin-top: -20px;
+        font-size: 11px;
+    }
+}
+/* small screen */
+@media (min-width : 768px){
+    .container{
+        width: 750px ;
+    }
+}
+/* medium screen */
+ @media (min-width : 992px){
+    .container{
+        width: 970px ;
+    }
+}
+/* large */
+@media (min-width : 1200px){
+    .container{
+        width: 1170px ;
+    }
+} 
+/* end global rules */
+
+.header {
+    padding: 20px;
+
+}
+.header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .logo {
+    width: 60px;
+}
+.header .links {
+    position: relative;
+
+}
+/* start ul in div  links codeing  */
+/*block  contains spans*/
+.header .links .spans{
+    width: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: flex-end;
+}
+.header .links:hover .spans span:nth-child(2){
+    width: 100%;
+}
+
+.header .links .spans span{
+    background-color: #222;
+    margin-bottom: 5px;
+    height: 3px;
+    width: 100%;
+
+}
+.header .links .spans span:first-child{
+    width: 100%;
+}
+.header .links .spans span:nth-child(2){
+    width: 60%;
+    transition:var(--main-duration);
+
+}
+.header .links .spans span:last-child{
+    width: 100%;
+}
+/* end ul in div  links codeing  */
+
+/* start ul in div  links codeing  */
+.header .container .links ul {
+    list-style: none; /* عشان النقطة تشال */
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    position: absolute;
+    right: 0;
+    min-width: 200px;
+    top: calc(100% + 15px) ;
+    display: none;
+    z-index: 1;
+}
+.header .container .links:hover ul {
+    display: block;
+}
+.header .container .links ul li a{
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #222;
+    transition: var(--main-duration);
+}
+.header .container .links ul li a:hover{
+    padding-left: 30px;
+}
+.header .container .links ul li:not(:last-child) a{
+    border-bottom: 1px solid #22222236;
+}
+.header .container .links ul::after{
+    content: "";
+    position: absolute;
+    border: 15px solid transparent;
+    border-bottom-color: #f7f7f7;
+    top: -29px;
+    right: 0;
+}
+/* end ul in div  links codeing  */
+/* start landing section */
+.landing{
+    background-image: url(../images/85838144-black-and-white-mountain-in-switzerland.jpg);
+    height: calc(100vh - 64px );
+    background-size: cover; /* عشان الصورة تمدد معاك وتاخد المساحة كلها ومتتكررش*/
+    position: relative;
+}
+.landing .intro-text{
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 320px;
+    max-width: 100%;
+}
+
+.landing h1{
+    margin: 0;
+    color: var(--main-color);
+    font-weight: bold;
+    font-size: 40px;
+}
+.landing .intro-text p{
+    font-size: 20px;
+    line-height: 1.8;
+
+}
+/* end landing section */
+/* start features  section */
+.features {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: #f7f7f7;
+
+}
+.features .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px , 1fr)); 
+    /* يعني الملئ بشكل تلقائي واقل حجم للعنصر 300 ولو اكبر ياخر جزء*/
+    /* يعني لو الحجم 1000 يقسم علي 3 لو 800 يقسم علي 2 والثالث ينزل تحت */
+    grid-gap: 20px;
+}
+.features .container .feat {
+    text-align: center;
+    padding: 20px;
+}
+.features .container .feat i {
+    color: var(--main-color);
+}
+.features .container .feat h3{
+    font-weight: 800;/* this is's work*/
+    font-size: 23px;
+    margin: 30px 0;
+}
+.features .container .feat p{
+    line-height: 1.8;
+    font-size: 17px ;
+    color: #777;
+}
+/* end features  section */
+/* start Services */
+.Services{
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.Services .Services-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax( 300px , 1fr));
+    gap: 30px;
+    margin-top: 100px;
+}
+.Services .Services-content .service {
+    display: flex;
+    margin-bottom: 40px ;
+}
+.Services .Services-content .service .text {
+    flex: 1; /* عشان الديف اللي موجود فيه البراجراف والعنون3 ينمو وياخد باقي المساحة*/
+}
+/*عشان ياخد الاتجاه دا في وضع التلفون */
+@media (max-width : 767px){
+    .Services .Services-content .service {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+}
+.Services .Services-content .service i {
+    color: var(--main-color);
+    flex-basis: 60px;
+    margin: 0;
+    font-size: 40px;
+}
+.Services .Services-content .service h3 {
+    margin: 0;
+}
+.Services .Services-content .service p {
+    margin-top: 30px;
+    color: #333;
+    line-height: 1.8;}
+    
+.Services .Services-content .col .image1 {
+    position: relative;
+    text-align: center;
+}
+.Services .Services-content .col .image1 img{
+    width: 300px  !important ;
+    height: 390px;
+    } 
+.Services .Services-content .col .image1::before{
+    content: "";
+    width: 80px;
+    background-color: var(--secondary-color);
+    height: 100%;
+    top: -50px;
+    right: 0;
+    z-index: -1;
+    position: absolute;
+    height: calc(100% + 100px);
+    }
+@media (max-width:1199px)
+{
+    .image-none{
+        display: none;
+    }
+}
+/* end Services */
+/* start Portfolio */
+.portfolio{
+    padding-top: var(--padding);
+    padding-bottom: var(--padding);
+    background-color: #f7f7f7;
+}
+.portfolio .container .projects{
+    display: grid;
+    margin-top: 80px;
+    grid-template-columns: repeat(auto-fill, minmax( 300px , 1fr));
+    grid-gap: 30px;
+}
+.portfolio .container .projects .pro .image img{
+    max-width: 100%;
+} 
+.portfolio .container .projects .pro{
+    background-color: white;
+    
+
+}
+.portfolio .container .projects .pro .text{
+    padding: 15px;
+}
+.portfolio .container .projects .pro .text p{
+    
+    margin-top: 0;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+.portfolio .container .projects .pro .text h3{
+    
+    margin-top:0;
+}
+.Pro-button{
+    text-align: center;
+    margin: 20px 0 0 0;
+}
+.Pro-click{
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+
+}
+/* end Portfolio */
+/* start about */
+.aAbout{
+    padding-top: 60px;
+    padding-bottom: 120px;
+}
+.aAbout .container .about-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 100px;
+    position: relative;
+}
+@media (max-width: 992px){
+.aAbout .container .about-content {
+    flex-direction: column;
+    text-align: center;
+
+}
+}
+.aAbout .container .about-content .image img {
+    max-width: 100%;
+    height: 100%;
+    box-shadow: 5px 6px 10px #333333bf;
+}
+.aAbout .container .about-content .image {
+    width: 250px;
+    height: 375px;
+}
+@media (max-width: 992px){
+    .aAbout .container .about-content .image {
+        margin: 0 auto 60px ;
+        
+    }
+}
+.aAbout .container .about-content .image::after {
+    content: "";
+    position: absolute;
+    background-color: #10cab7;
+    width: 80px;
+    height: 250px;
+    top: -25px;
+    left: 205px;
+    z-index: -1;
+}
+.aAbout .container .about-content .image::before {
+    content: "";
+    position: absolute;
+    background-color: #10cab7;
+    width: 200px;
+    height: 80px;
+    top: 220px;
+    left: 180px;
+    z-index: -1;
+}
+@media (max-width: 992px){
+    .aAbout .container .about-content .image::before,
+    .aAbout .container .about-content .image::after{
+        display: none;
+        
+    }
+}
+.aAbout .container .about-content .text-about {
+    flex-basis: calc(100% - 500px);
+}
+.aAbout .container .about-content .text-about p:first-of-type {
+    font-weight: bold;
+    margin-bottom: 50px;
+    line-height: 2;
+
+}
+
+.aAbout .container .about-content .text-about hr {
+    width: 50%;
+    border-color: var(--main-color);
+    display: inline-block;
+}
+.aAbout .container .about-content .text-about p:last-of-type {
+    line-height: 2;
+    color: #777;
+}
+/* end about */
+/* start contact */
+.contact{
+    background-color: #f7f7f7;
+    padding-top:var(--padding) ;
+    padding-bottom:var(--padding) ;
+}
+.contact .contact-content{
+    margin-top: 100px;
+    text-align: center;
+}
+.contact .contact-content .info p:first-of-type{
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--secondary-color);
+    margin-bottom: 20px ;
+}
+.contact .contact-content .info .link{
+    display: block;
+    font-size: 33px;
+    font-weight: 800;
+    text-decoration: none; /* عشان نلغي الخط اللي تحت اللينك */
+    color: var(--main-color);
+
+}
+.contact .contact-content .social{
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    justify-content: center;
+
+}
+.contact .contact-content .social i{
+    margin-left: 10px;
+    color: var(--secondary-color);
+    font-size: 30px;
+}
+@media (max-width: 992px ){
+    .contact .container .contact-content{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+
+}
+.c2019{
+    background-color: var(--secondary-color);
+    width: 100%;
+
+    text-align: center;
+    color: white;
+    padding: 30px 10px ;
+    font-weight: bold;
+}
+.c2019 span{
+    color: #10cab7;
+   
+}
+
+/* ToDo :medai for mobial 
+*/
+/* end contact */
+
